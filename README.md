@@ -10,9 +10,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Features
 
-This app the time digitally in the center of the screen, in the format of hours:minutes:seconds.
+This app the time digitally in the center of the screen, in the format of hours:minutes:seconds (the 12-hour format, or 'civilian time').
 
-Click on it to switch the time format display to military time. Click to revert it to regular time.
+Click on it to switch the time format display to military time. Click to revert it to civilian time.
 
 ## How To Run
 
