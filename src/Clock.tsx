@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './clock.css';
 
 const Clock: React.FC = () => {
-    const [isMilitary, setIsMilitary] = useState<boolean>(false); // State to track view mode
+    const [isMilitary, setIsMilitary] = useState<boolean>(false); 
 
-    // Function to get the current time string based on the view mode
     const getCurrentTimeString = () => {
         const now = new Date();
         let hours = now.getHours();
@@ -12,13 +11,11 @@ const Clock: React.FC = () => {
         const seconds = String(now.getSeconds()).padStart(2, '0');
 
         if (!isMilitary) {
-            // Convert to 12-hour format without AM/PM
             hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
+            hours = hours ? hours : 12; 
             return `${String(hours).padStart(2, '0')}:${minutes}:${seconds}`;
         }
 
-        // 24-hour format
         return `${String(hours).padStart(2, '0')}:${minutes}:${seconds}`;
     };
 
@@ -29,11 +26,9 @@ const Clock: React.FC = () => {
             setTime(getCurrentTimeString());
         }, 1000);
 
-        // Cleanup the interval on component unmount
         return () => clearInterval(intervalId);
     }, [isMilitary]);
 
-    // Function to toggle the view mode
     const toggleView = () => {
         setIsMilitary(!isMilitary);
     };
